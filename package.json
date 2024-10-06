@@ -1,0 +1,17 @@
+{
+  "name": "webscraping",
+  "version": "1.0.0",
+  "description": "this the app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^23.4.0"
+  }
+}

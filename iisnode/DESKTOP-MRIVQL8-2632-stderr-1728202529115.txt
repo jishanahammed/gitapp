@@ -1,0 +1,864 @@
+(node:2632) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Error during fetching process: AxiosError: connect ETIMEDOUT 20.205.243.168:443
+    at AxiosError.from (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:876:14)
+    at RedirectableRequest.handleRequestError (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:3156:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (E:\Githupdatalive\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:4287:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRateLimit (E:\Githupdatalive\server.js:35:22)
+    at async fetchAllUsers (E:\Githupdatalive\server.js:92:27)
+    at async E:\Githupdatalive\server.js:165:9 {
+  port: 443,
+  address: '20.205.243.168',
+  syscall: 'connect',
+  code: 'ETIMEDOUT',
+  errno: -4039,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': undefined,
+      Authorization: 'token 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',
+      'User-Agent': 'axios/1.7.7',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://api.github.com/rate_limit',
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/rate_limit',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'api.github.com',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/rate_limit'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'GET /rate_limit HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Authorization: token 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\r\n' +
+        'User-Agent: axios/1.7.7\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: api.github.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/rate_limit',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.github.com',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://api.github.com/rate_limit',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: connect ETIMEDOUT 20.205.243.168:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1605:16) {
+    errno: -4039,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '20.205.243.168',
+    port: 443
+  }
+}
+Error fetching details for user outerim: read ECONNRESET
+Error fetching details for user daksis: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user sr: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user lifo: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user rsl: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user imownbey: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user dylanegan: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user jm: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user kmarsh: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user jvantuyl: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user BrianTheCoder: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user freeformz: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user hassox: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user automatthew: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user queso: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user lancecarlson: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user drnic: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user lukesutton: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user danwrong: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user HamptonMakes: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user jfrost: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user mattetti: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user ctennis: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user lawrencepit: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user marcjeanson: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user grempe: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user peterc: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user ministrycentered: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user afarnham: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user up_the_irons: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user cristibalan: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user heavysixer: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user brosner: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user danielmorrison: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user danielharan: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user kvnsmth: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user collectiveidea: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user canadaduane: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user corasaurus-hex: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user dstrelau: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user sunny: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user dkubb: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user jnicklas: getaddrinfo ENOTFOUND api.github.com
+Error fetching details for user richcollins: getaddrinfo ENOTFOUND api.github.com
+Error during fetching process: AxiosError: getaddrinfo ENOTFOUND api.github.com
+    at AxiosError.from (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:876:14)
+    at RedirectableRequest.handleRequestError (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:3156:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (E:\Githupdatalive\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:4287:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRateLimit (E:\Githupdatalive\server.js:35:22)
+    at async fetchAllUsers (E:\Githupdatalive\server.js:92:27)
+    at async E:\Githupdatalive\server.js:165:9 {
+  hostname: 'api.github.com',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': undefined,
+      Authorization: 'token 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',
+      'User-Agent': 'axios/1.7.7',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://api.github.com/rate_limit',
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/rate_limit',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'api.github.com',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/rate_limit'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'GET /rate_limit HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Authorization: token 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\r\n' +
+        'User-Agent: axios/1.7.7\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: api.github.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/rate_limit',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.github.com',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://api.github.com/rate_limit',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND api.github.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api.github.com'
+  }
+}
+Error during fetching process: AxiosError: getaddrinfo ENOTFOUND api.github.com
+    at AxiosError.from (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:876:14)
+    at RedirectableRequest.handleRequestError (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:3156:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (E:\Githupdatalive\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (E:\Githupdatalive\node_modules\axios\dist\node\axios.cjs:4287:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getRateLimit (E:\Githupdatalive\server.js:35:22)
+    at async fetchAllUsers (E:\Githupdatalive\server.js:92:27)
+    at async E:\Githupdatalive\server.js:165:9 {
+  hostname: 'api.github.com',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': undefined,
+      Authorization: 'token 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',
+      'User-Agent': 'axios/1.7.7',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'get',
+    url: 'https://api.github.com/rate_limit',
+    data: undefined
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/rate_limit',
+      method: 'GET',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'api.github.com',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/rate_limit'
+    },
+    _ended: true,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 0,
+    _requestBodyBuffers: [],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: false,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: 0,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'GET /rate_limit HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Authorization: token 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\r\n' +
+        'User-Agent: axios/1.7.7\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: api.github.com\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'GET',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/rate_limit',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.github.com',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://api.github.com/rate_limit',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND api.github.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api.github.com'
+  }
+}
+Error fetching details for user oool: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user dwabn: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user kobrakai: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user jwallace: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user oool: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user dwabn: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user kobrakai: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user jwallace: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user matt: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user matt: {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest',
+  status: '404'
+}
+Error fetching details for user madmatah: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEC36:4549A7B:67025163 and timestamp 2024-10-06 08:59:15 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user goblin: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4412ED:46FA5F:67025163 and timestamp 2024-10-06 08:59:15 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user matthewcarriere: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEC6D:4549AB4:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user rand: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441325:46FA98:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user sonny: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EECA9:4549AF5:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user poulikov: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441358:46FACB:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user georgeguimaraes: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EECDF:4549B29:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user klaste: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:44138D:46FB01:67025164 and timestamp 2024-10-06 08:59:16 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user austinfromboston: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EED0F:4549B5C:67025164 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user pdamer: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4413BE:46FB31:67025164 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user michael: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EED3A:4549B8B:67025165 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user derencius: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4413EF:46FB62:67025165 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user wjs-zz: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EED72:4549BC1:67025165 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user akitaonrails: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441420:46FB9B:67025165 and timestamp 2024-10-06 08:59:17 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user adamstac: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEDA0:4549BF4:67025165 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user chmurph2: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:44145A:46FBD5:67025165 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user alexk: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEDDC:4549C2D:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user wesabe: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:44148D:46FC0F:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user stuartsaunders: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEE0E:4549C5C:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user tsykoduk: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4414D0:46FC4E:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user jw-00000: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEE3E:4549C93:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user stem: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441507:46FC89:67025166 and timestamp 2024-10-06 08:59:18 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user ajmorris: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEE69:4549CC8:67025167 and timestamp 2024-10-06 08:59:19 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user aruiz: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441567:46FCEF:67025167 and timestamp 2024-10-06 08:59:19 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user ningerso: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEEA3:4549D1D:67025167 and timestamp 2024-10-06 08:59:19 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user mudboy: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441596:46FD2C:67025167 and timestamp 2024-10-06 08:59:19 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user courtenay: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEED8:4549D4A:67025167 and timestamp 2024-10-06 08:59:19 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user andrzejkrzywda: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4415D3:46FD6B:67025167 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user nope: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEF06:4549D79:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user paulgribble: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:44160B:46FDA0:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user pope: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEF3D:4549DB2:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user dringoen: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441635:46FDCA:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user osake: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEF71:4549DE4:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user kip: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:441665:46FDFD:67025168 and timestamp 2024-10-06 08:59:20 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user lagartoflojo: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEFA1:4549E17:67025168 and timestamp 2024-10-06 08:59:21 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user matte: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:44169A:46FE39:67025169 and timestamp 2024-10-06 08:59:21 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user doubleg: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEFCC:4549E43:67025169 and timestamp 2024-10-06 08:59:21 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user tene: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D84D:38F4C5:4416CD:46FE64:67025169 and timestamp 2024-10-06 08:59:21 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user chl: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EEFF4:4549E6E:67025169 and timestamp 2024-10-06 08:59:21 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user gen2002: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF020:4549E9F:67025169 and timestamp 2024-10-06 08:59:22 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user rwjc: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF04E:4549ED5:6702516A and timestamp 2024-10-06 08:59:22 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user quickredfox: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF08B:4549F0C:6702516A and timestamp 2024-10-06 08:59:22 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user gavin: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF0BA:4549F46:6702516A and timestamp 2024-10-06 08:59:23 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user thedavidprice: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF0F7:4549F76:6702516B and timestamp 2024-10-06 08:59:23 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user lgarcia: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF11F:4549FA9:6702516B and timestamp 2024-10-06 08:59:23 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user soylentfoo: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF150:4549FDA:6702516B and timestamp 2024-10-06 08:59:23 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user chrisortman: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF188:454A012:6702516C and timestamp 2024-10-06 08:59:24 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user cscotta: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF1B8:454A03F:6702516C and timestamp 2024-10-06 08:59:24 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user ventoneicapelli: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF1F0:454A080:6702516C and timestamp 2024-10-06 08:59:24 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}
+Error fetching details for user itsmattking: {
+  message: 'API rate limit exceeded for user ID 87933101. If you reach out to GitHub Support for help, please include the request ID D7D5:25C720:41EF220:454A0AA:6702516D and timestamp 2024-10-06 08:59:25 UTC.',
+  documentation_url: 'https://docs.github.com/rest/overview/rate-limits-for-the-rest-api',
+  status: '403'
+}

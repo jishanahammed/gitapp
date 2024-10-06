@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Fetcher</title>
+    <style>
+        /* Make the batch files list scrollable */
+        #batchFilesList {
+            max-height: 500px; /* Adjust this value as needed */
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /* Optional: styling the list items */
+        #batchFilesList li {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+    </style>
+</head>
+<body class="main">
+    <h1>GitHub User Fetcher</h1>
+    <button id="fetchButton">Fetch GitHub Users</button>
+    <p id="fetchStatus"></p>
+
+    <h2>Status</h2>
+    <p>Since: <span id="since">Loading...</span></p>
+    <p>Total Fetched: <span id="totalFetched">Loading...</span></p>
+    
+    <h2>Batch Files</h2>
+    <ul id="batchFilesList"></ul>
+
+    <script>
+        // Fetch GitHub Users
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            document.getElementById('fetchStatus').textContent = 'Fetching users...';
+
+            fetch('/fetch-users')  <!-- Changed to relative path -->
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('fetchStatus').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('fetchStatus').textContent = 'Error fetching users.';
+                    console.error('Error:', error);
+                });
+        });
+
+        // Function to fetch and display status and batch files
+        function fetchStatus() {
+            fetch('/status')  
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update Since and Total Fetched
+                    document.getElementById('since').textContent = data.since;
+                    document.getElementById('totalFetched').textContent = data.totalFetched;
+
+                    // Update Batch Files List
+                    const batchFilesList = document.getElementById('batchFilesList');
+                    batchFilesList.innerHTML = '';
+
+                    // Sort batch files numerically by the number in the file name (assuming 'github_users_<number>.json')
+                    data.batchFiles.sort((a, b) => {
+                        const numA = parseInt(a.match(/(\d+)/)[0], 10);
+                        const numB = parseInt(b.match(/(\d+)/)[0], 10);
+                        return numA - numB; // Sort ascending
+                    });
+
+                    // Append sorted batch files to the list
+                    data.batchFiles.forEach(file => {
+                        const li = document.createElement('li');
+                        li.textContent = file;
+                        batchFilesList.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching status:', error);
+                });
+        }
+
+        // Initial fetch of status and batch files
+        fetchStatus();
+
+        // Fetch status every 10 seconds to keep it updated
+        setInterval(fetchStatus, 10000);
+    </script>
+</body>
+</html>
