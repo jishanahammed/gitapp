@@ -3,8 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const app = express();
+const cors = require('cors'); 
 const PORT = 3000;
-
+app.use(cors()); // Allow all origins by default
 // GitHub API and Config
 const BASE_URL = 'https://api.github.com/users';
 const GITHUB_TOKEN = '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';
